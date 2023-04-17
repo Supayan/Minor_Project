@@ -1,0 +1,9 @@
+convtering all the decimal values to binary
+
+0 in decimal converts to binary as 0000
+255 as binary convertsto as 11111111
+
+adding bitwise or to masked and cannied img to get only the road track lines
+
+
+using huff transform technique to identify straight lines

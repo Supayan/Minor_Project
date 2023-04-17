@@ -16,11 +16,13 @@ def region_of_interest(img):
     poly=np.array([[(50,height),(280,height),(150,95)]])
     mask=np.zeros_like(img)
     cv2.fillPoly(mask,poly,255)
-    return mask
+    masked_image= cv2.bitwise_and(img,mask)
+    return masked_image
 
 img= cv2.imread('images.jpg')
 lane_img=np.copy(img)
 canny=canny(lane_img)
-cv2.imshow('result', region_of_interest(canny))
+cropped_img=region_of_interest(canny)
+cv2.imshow('result', cropped_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
